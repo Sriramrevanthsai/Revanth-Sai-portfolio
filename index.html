@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sriram Revanth Sai — Computer Science student specializing in AI and Machine Learning." />
+  <title>Sriram Revanth Sai | AI & ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#0b1020; --panel:#111a2e; --panel2:#151f35; --text:#edf2ff; --muted:#a7b2c9; --line:#26334e; --accent:#7cdbbd; --accent2:#8da9ff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:radial-gradient(ellipse at 80% 0%, #1a2a48 0, transparent 36%),var(--bg); color:var(--text); font-family:Manrope,system-ui,sans-serif; line-height:1.65; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1080px, calc(100% - 40px)); margin:auto; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:25px 0; border-bottom:1px solid var(--line); }
+    .brand { font-weight:800; letter-spacing:-.04em; font-size:18px; }
+    .brand span { color:var(--accent); }
+    nav { display:flex; gap:25px; color:var(--muted); font-size:13px; }
+    nav a:hover,.text-link:hover { color:var(--accent); }
+    .hero { padding:92px 0 76px; display:grid; grid-template-columns:1.5fr .8fr; gap:55px; align-items:center; }
+    .eyebrow,.tag { font:12px "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); }
+    h1 { font-size:clamp(42px,7vw,72px); line-height:1.05; letter-spacing:-.065em; margin:18px 0; }
+    h1 em { color:var(--accent); font-style:normal; }
+    .lead { max-width:660px; color:var(--muted); font-size:17px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+    .btn { display:inline-flex; padding:12px 18px; border-radius:8px; border:1px solid var(--line); font-weight:700; font-size:13px; transition:.2s; }
+    .btn.primary { background:var(--accent); color:#07131a; border-color:var(--accent); }
+    .btn:hover { transform:translateY(-2px); }
+    .hero-card { background:linear-gradient(145deg,#17243d,#10182a); border:1px solid var(--line); border-radius:18px; padding:25px; box-shadow:0 20px 60px #0004; }
+    .orb { width:100%; aspect-ratio:1.15; border-radius:14px; background:radial-gradient(circle at 50% 40%,#7cdbbd55,transparent 35%),linear-gradient(135deg,#1d3150,#111a2d); display:grid; place-items:center; font-size:66px; margin-bottom:20px; }
+    .stat { display:flex; justify-content:space-between; padding:12px 0; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .stat strong { color:var(--text); }
+    section { padding:62px 0; border-top:1px solid var(--line); }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:28px; }
+    h2 { font-size:30px; letter-spacing:-.04em; margin:5px 0 0; }
+    .sub { color:var(--muted); font-size:14px; max-width:520px; }
+    .about { display:grid; grid-template-columns:1fr 1fr; gap:35px; }
+    .about p { color:var(--muted); margin-top:0; }
+    .chips { display:flex; flex-wrap:wrap; gap:9px; }
+    .chip { border:1px solid var(--line); background:#111a2b; color:#cbd5e8; border-radius:7px; padding:8px 11px; font-size:12px; }
+    .projects { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .project { background:linear-gradient(145deg,var(--panel),#0f1729); border:1px solid var(--line); border-radius:13px; padding:22px; display:flex; flex-direction:column; min-height:245px; }
+    .project h3 { margin:12px 0 8px; font-size:18px; letter-spacing:-.025em; }
+    .project p { color:var(--muted); font-size:13px; margin:0 0 18px; }
+    .project .stack { margin-top:auto; color:var(--accent2); font:11px "DM Mono",monospace; }
+    .timeline { display:grid; gap:14px; }
+    .role { display:grid; grid-template-columns:190px 1fr; gap:20px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .date { color:var(--accent); font:12px "DM Mono",monospace; }
+    .role h3 { margin:0; font-size:16px; }
+    .role p { color:var(--muted); font-size:13px; margin:5px 0 0; }
+    .contact { background:linear-gradient(120deg,#14233b,#111a2e); border:1px solid var(--line); border-radius:16px; padding:32px; display:flex; justify-content:space-between; align-items:center; gap:25px; }
+    .contact h2 { margin-bottom:8px; }
+    footer { padding:25px 0 35px; color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:15px; }
+    @media(max-width:760px) { nav { gap:12px; font-size:11px; } .hero { grid-template-columns:1fr; padding:65px 0 50px; gap:25px; } .hero-card { max-width:420px; } .about,.projects { grid-template-columns:1fr; } .role { grid-template-columns:1fr; gap:5px; } .contact { align-items:flex-start; flex-direction:column; } }
+    @media(max-width:440px) { .wrap { width:min(100% - 28px,1080px); } nav a:nth-child(2) { display:none; } h1 { font-size:43px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#top">RE<span>V</span>ANTH.</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Computer Science · AI & Machine Learning</div>
+          <h1>Building useful things with <em>AI.</em></h1>
+          <p class="lead">I'm Sriram Revanth Sai, a Computer Science student focused on AI and Machine Learning. I enjoy investigating difficult problems, learning new tools independently, and turning ideas into working applications.</p>
+          <div class="actions">
+            <a class="btn primary" href="#projects">Explore my work ↘</a>
+            <a class="btn" href="https://www.linkedin.com/in/revanth-sai-sriram/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/Sriramrevanthsai" target="_blank" rel="noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div class="orb">⌘</div>
+          <div class="stat"><span>Degree</span><strong>B.Tech, CSE (AI & ML)</strong></div>
+          <div class="stat"><span>University</span><strong>SRM University-AP</strong></div>
+          <div class="stat"><span>Graduation</span><strong>2027</strong></div>
+          <div class="stat"><span>Focus</span><strong>Applied AI · Computer Vision</strong></div>
+        </aside>
+      </div>
+
+      <section id="about">
+        <div class="section-head"><div><div class="eyebrow">01 / About</div><h2>A builder's mindset.</h2></div></div>
+        <div class="about">
+          <div>
+            <p>My approach is to understand the problem before choosing the technology. In project work, that means checking data quality, testing assumptions, comparing approaches, and improving based on evidence—not just accepting the first result.</p>
+            <p>I'm interested in opportunities where I can contribute to practical software and AI systems while continuing to learn from real engineering challenges.</p>
+          </div>
+          <div>
+            <div class="eyebrow" style="margin-bottom:12px">Technical toolkit</div>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">C++</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Computer Vision</span><span class="chip">LLMs</span><span class="chip">FastAPI</span><span class="chip">REST APIs</span><span class="chip">YOLOv8</span><span class="chip">RT-DETR</span><span class="chip">Docker</span><span class="chip">Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-head"><div><div class="eyebrow">02 / Experience</div><h2>Where I've contributed.</h2></div></div>
+        <div class="timeline">
+          <div class="role">
+            <div class="date">NOV 2025 — PRESENT</div>
+            <div><h3>Product Engineer — AI Systems Development · Astrivya</h3><p>Led cross-functional AI development teams, supporting sprint execution and technical validation across project work.</p></div>
+          </div>
+          <div class="role">
+            <div class="date">JUN 2025 — JUL 2025</div>
+            <div><h3>LLM Applications Engineering Intern · Edubot</h3><p>Built LLM-powered applications and integrated REST APIs into application workflows.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-head"><div><div class="eyebrow">03 / Selected work</div><h2>Projects & experiments.</h2></div><p class="sub">A selection of projects across applied AI, computer vision, and intelligent systems.</p></div>
+        <div class="projects">
+          <article class="project">
+            <div class="tag">Computer vision · Object detection</div>
+            <h3>AI-Based Vehicle Damage Assessment</h3>
+            <p>Built a vehicle damage detection pipeline using a curated and augmented dataset. Investigated class imbalance and label quality, then improved model precision from 38% to 84% using RT-DETR.</p>
+            <div class="stack">RT-DETR · Python · Data augmentation · Docker</div>
+          </article>
+          <article class="project">
+            <div class="tag">Multimodal AI · Healthcare</div>
+            <h3>VisionFusion MedAI</h3>
+            <p>Developed a FastAPI-based multimodal healthcare assistant concept integrating medical vision, speech, prescription OCR, and MCP-based workflows.</p>
+            <div class="stack">FastAPI · MedGemma · MedASR · OCR · MCP</div>
+          </article>
+          <article class="project">
+            <div class="tag">Computer vision · IoT</div>
+            <h3>IoT-Based Classroom Phone Monitoring</h3>
+            <p>Explored object detection and face-recognition techniques to support classroom mobile-phone monitoring.</p>
+            <div class="stack">YOLOv8 · Computer Vision · IoT</div>
+          </article>
+          <article class="project">
+            <div class="tag">Embedded systems</div>
+            <h3>RISC-V Smart Energy Monitoring</h3>
+            <p>Designed an embedded energy-monitoring project around a RISC-V-based system.</p>
+            <div class="stack">RISC-V · Embedded Systems</div>
+          </article>
+          <article class="project">
+            <div class="tag">Research · Hackathon</div>
+            <h3>Lung Cancer Detection from Chest X-rays</h3>
+            <p>Worked on an AI-based medical imaging project that received runner-up recognition at QBITRON Hackathon 2025.</p>
+            <div class="stack">Deep Learning · Medical Imaging</div>
+          </article>
+          <article class="project">
+            <div class="tag">Machine learning</div>
+            <h3>Applied ML Projects</h3>
+            <p>Additional experiments include loan approval prediction, telecom customer churn prediction, Bitcoin price prediction, and sentiment analysis.</p>
+            <div class="stack">Python · Machine Learning · Data Analysis</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact">
+          <div><div class="eyebrow">04 / Get in touch</div><h2>Let's build something meaningful.</h2><p class="sub">Open to conversations about internships, entry-level opportunities, and practical AI/software projects.</p></div>
+          <div class="actions">
+            <a class="btn primary" href="https://www.linkedin.com/in/revanth-sai-sriram/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a>
+            <a class="btn" href="https://github.com/Sriramrevanthsai" target="_blank" rel="noreferrer">View GitHub ↗</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><span>© <span id="year"></span> Sriram Revanth Sai</span><span>Designed & built with a focus on clarity.</span></footer>
+  </div>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
